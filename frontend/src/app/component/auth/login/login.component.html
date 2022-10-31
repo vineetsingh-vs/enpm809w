@@ -1,0 +1,46 @@
+<div class="card m-3">
+  <h5 class="card-header">Human Resource Management Login</h5>
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label>User Name</label>
+          <input
+            type="text"
+            formControlName="userName"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && fields.userName.errors }"
+          />
+          <div *ngIf="submitted && fields.userName.errors" class="invalid-feedback">
+            <div *ngIf="fields.userName.errors.required">User Name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && fields.password.errors }"
+          />
+          <div *ngIf="submitted && fields.password.errors" class="invalid-feedback">
+            <div *ngIf="fields.password.errors.required">Password is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div  style="text-align: end">
+        <button class="btn btn-primary mr-1">Login</button>
+        <button class="btn btn-secondary" type="reset" >
+          Cancel
+        </button>
+        <div style="text-align: end; padding: 1em 1em">
+          <a href="javascript:;" >Request Access?</a>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

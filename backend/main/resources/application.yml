@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    password: admin
+    url: jdbc:postgresql://localhost:5432/hrm_system
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+server:
+  ssl:
+    key-store: /Users/vineetsingh/Documents/UMD/Sem-1/ENPM809W-Securing Coding/ENPM809WFall2022Project-vinsin/springboot.p12
+    key-store-password: password
+    key-store-type: pkcs12
+    key-alias: springboot
+    key-password: password
+  port: 8443
